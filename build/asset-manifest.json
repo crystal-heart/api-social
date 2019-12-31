@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/static/css/main.d3183f1a.chunk.css",
+    "main.js": "/static/js/main.c72f0f88.chunk.js",
+    "main.js.map": "/static/js/main.c72f0f88.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.30da00e1.js",
+    "runtime-main.js.map": "/static/js/runtime-main.30da00e1.js.map",
+    "static/js/2.128727eb.chunk.js": "/static/js/2.128727eb.chunk.js",
+    "static/js/2.128727eb.chunk.js.map": "/static/js/2.128727eb.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.b1487752dd1798048923a238e593d118.js": "/precache-manifest.b1487752dd1798048923a238e593d118.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.d3183f1a.chunk.css.map": "/static/css/main.d3183f1a.chunk.css.map",
+    "static/js/2.128727eb.chunk.js.LICENSE": "/static/js/2.128727eb.chunk.js.LICENSE",
+    "static/media/style.css": "/static/media/menu-icon.61481528.svg",
+    "static/media/heart-solid.svg": "/static/media/heart-solid.15b07261.svg",
+    "static/media/lock-icon.svg": "/static/media/lock-icon.5e364adb.svg",
+    "static/media/remind-icon.svg": "/static/media/remind-icon.00cc5a32.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.30da00e1.js",
+    "static/js/2.128727eb.chunk.js",
+    "static/css/main.d3183f1a.chunk.css",
+    "static/js/main.c72f0f88.chunk.js"
+  ]
+}
