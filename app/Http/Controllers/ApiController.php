@@ -31,7 +31,7 @@ class ApiController extends Controller
             return response()->json(['failed_to_create_token'], 500);
         }
         $id = Auth::id();
-        return response()->json(compact('token','id'));
+        return response()->json(compact('token', 'id'));
     }
 
     public function register(Request $request)
@@ -135,8 +135,45 @@ class ApiController extends Controller
 
     }
 
-    public function synData(Request $request) {
+    public function synData(Request $request)
+    {
 
+        $list = json_decode($request->data, true);
+        $offLineListId = [];
+
+        foreach ($list as $item) {
+            array_push($offLineListId, $item['id']);
+        }
+        $myNoteId = Note::where('user_id', Auth::id())->pluck('id')->toArray();
+
+        $deletedItem = array_diff($myNoteId, $offLineListId);
+
+        foreach ($deletedItem as $item) {
+            try {
+                $item = Note::findOrFail($item);
+                $item->delete();
+            } catch (\Exception $e) {
+                return response()->json(['satus' => 'false']);
+            }
+        }
+
+        foreach ($list as $item) {
+            try {
+                $note = Note::findOrFail($item['id']);
+                $note->title = $item['title'];
+                $note->content = $item['content'];
+                $note->save();
+            } catch (\Exception $e) {
+
+                $newNote = new Note();
+                $newNote->user_id = Auth::id();
+                $newNote->title = $item['title'];
+                $newNote->content = $item['content'];
+                $newNote->created_at = new \DateTime();
+                $newNote->save();
+            }
+        }
+        return response()->json(['satus' => 'ok']);
     }
 
 }

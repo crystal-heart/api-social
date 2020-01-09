@@ -20,4 +20,5 @@ Route::group(['middleware' => 'jwt.auth'], function () {
     Route::get('story/show/{id}', 'ApiController@showStory');
     Route::post('story/update', 'ApiController@updateStory');
     Route::get('story/delete/{id}', 'ApiController@deleteStory');
+    Route::post('synData', 'ApiController@synData');
 });
